@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+$pdo = require 'connect.php';
+
+$sql = 'select * from produtos';
+
+echo '<h3>Produtos: </h3>';
+
+// $pdo->query('use exemplo');
+
+foreach ($pdo->query($sql) as $key => $value) {
+    echo 'Id: '.$value['id'].'<br>Descrição: '.$value['description'].'<hr>';
+}
